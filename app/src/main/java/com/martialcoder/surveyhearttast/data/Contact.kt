@@ -17,6 +17,12 @@ data class Contact(
     var name: String = "",
 
     @ColumnInfo(name = "number")
-    var number: String = ""
+    var number: String = ""  ,
+
+    @ColumnInfo(name = "business")
+    var business: String = "business",
+
+    @ColumnInfo(name = "customer")
+    var customer: String = "customer",
 
 )

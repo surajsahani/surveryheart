@@ -55,6 +55,9 @@ class MainActivity : AppCompatActivity(), ContactRecyclerAdapter.OnItemClickList
             R.id.delete_all_items -> {
                 deleteAllContacts()
             }
+            R.id.get_my_business_contacts -> {
+                getBusinessContacts()
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -63,6 +66,9 @@ class MainActivity : AppCompatActivity(), ContactRecyclerAdapter.OnItemClickList
         db!!.daoContact().deleteAllContacts()
     }
 
+    private fun getBusinessContacts() {
+        db!!.daoContact().getContactByBusiness(getBusinessContacts()as String)
+    }
     override fun onItemClick(contact: Contact) {
         var intent = Intent(applicationContext, ContactDetailsActivity::class.java)
         intent.putExtra("idContact", contact.id)

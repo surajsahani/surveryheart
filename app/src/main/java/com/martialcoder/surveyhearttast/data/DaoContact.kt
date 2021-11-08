@@ -14,6 +14,9 @@ interface DaoContact {
     @Query("select * from contacts where idContact in (:id)")
     fun getContactById(id: Int): Contact
 
+    @Query("select * from contacts where business in (:business)")
+    fun getContactByBusiness(business: String): Contact
+
     @Query("delete from contacts")
     fun deleteAllContacts()
 
